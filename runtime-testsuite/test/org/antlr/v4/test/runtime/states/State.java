@@ -23,6 +23,10 @@ public abstract class State {
 		String result = "State: " + getStage() + "; ";
 		if (exception != null) {
 			result += exception.toString();
+			if ( exception.getCause()!=null ) {
+				result += "\nCause:\n";
+				result += exception.getCause().toString();
+			}
 		}
 		return result;
 	}
